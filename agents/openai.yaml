@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS 26 Liquid Glass SwiftUI"
+  short_description: "Build iOS 26 Liquid Glass in SwiftUI"
+  default_prompt: "Use $ios26-liquidglass-swiftui to implement native Liquid Glass patterns in this SwiftUI screen."
