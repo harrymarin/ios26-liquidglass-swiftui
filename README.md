@@ -75,6 +75,10 @@ Use $ios26-liquidglass-swiftui to refactor this SwiftUI screen into an iOS 26 Li
 
 很多所谓 “Liquid Glass 风格” 最后只是 blur、透明度和渐变的叠加。这个 skill 的目标不是做“像玻璃”的视觉，而是帮助 agent 用更接近 iOS 26 原生设计语言的方式去实现真正可交付的 SwiftUI 界面。
 
+### License
+
+MIT
+
 ---
 
 ## English
@@ -141,3 +145,7 @@ Use $ios26-liquidglass-swiftui to refactor this SwiftUI screen into an iOS 26 Li
 ### Why This Exists
 
 Many so-called “Liquid Glass” implementations end up being stacks of blur, opacity, and gradients. This skill is meant to help agents produce SwiftUI work that feels aligned with the iOS 26 design language and is suitable for real delivery.
+
+### License
+
+MIT
