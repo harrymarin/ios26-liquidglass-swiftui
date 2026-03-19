@@ -20,6 +20,8 @@ Read `references/checklist.md` before finalizing UI behavior.
 4. Add morphing with shared IDs where controls change size, position, or context.
 5. Validate accessibility, contrast, reduce-transparency behavior, and performance.
 
+Do not stop after adding visual glass effects. A run is incomplete until the semantic placement, interaction behavior, and validation checks have been covered.
+
 ## Core Rules
 
 - Prefer system components first. Let iOS manage adaptive glass behavior in bars, sheets, and menus.
@@ -28,6 +30,8 @@ Read `references/checklist.md` before finalizing UI behavior.
 - Use `glassEffectID(_:in:)` with a shared `Namespace` to morph related controls across state transitions.
 - Use `.buttonStyle(.glass)` or `.buttonStyle(.glassProminent)` for tappable controls.
 - Keep glass layers sparse. Overuse reduces hierarchy clarity and can hurt frame pacing.
+- Do not treat a blur-heavy imitation as a valid Liquid Glass result.
+- Do not claim completion from screenshots or static appearance alone.
 
 ## SwiftUI Patterns
 
@@ -93,3 +97,13 @@ Before claiming completion, run the checklist in `references/checklist.md` and c
 - expected API usage matches intent,
 - transitions are stable,
 - accessibility and performance checks are complete.
+
+All of the following are REQUIRED unless the user explicitly narrows the task:
+
+- correct API choice for the targeted surface
+- no unnecessary fake-glass fallback when native iOS 26 APIs should be used
+- interaction surfaces are semantically chosen, not glass-added everywhere
+- accessibility and readability are checked
+- transition behavior is checked when morphing is introduced
+
+Do not claim the screen is finished if the result only looks glassy but has not been validated against the checklist.
