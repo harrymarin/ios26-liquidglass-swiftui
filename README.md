@@ -1,43 +1,51 @@
-# ios26-liquidglass-swiftui
+[![English](https://img.shields.io/badge/English-Click_to_View-blue)](./README.en.md)
+[![中文](https://img.shields.io/badge/中文-当前-green)](./README.md)
+[![Install](https://img.shields.io/badge/Install-Guide-orange)](#安装)
+[![Structure](https://img.shields.io/badge/Structure-Architecture-purple)](#仓库结构)
+[![Release](https://img.shields.io/github/v/release/harrymarin/ios26-liquidglass-swiftui?style=flat-square)](https://github.com/harrymarin/ios26-liquidglass-swiftui/releases)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey)](./LICENSE)
 
-[English](#english) | [中文](#中文)
-
----
-
-## 中文
+# iOS 26 Liquid Glass SwiftUI
 
 `ios26-liquidglass-swiftui` 是一个可分发的 Codex skill，用来指导 AI coding agent 将 SwiftUI 页面改造成 iOS 26 Liquid Glass 风格。
 
 它聚焦于使用原生 SwiftUI / iOS 26 能力来实现 Liquid Glass 体验，而不是依赖自定义模糊层、伪玻璃特效或不可维护的视觉 hack。
 
-### 特性
+## 快速导航
 
-- 聚焦 iOS 26 原生 Liquid Glass API
-- 面向 SwiftUI 页面重构和新页面开发
-- 提供实现 workflow、快速参考和交付检查清单
-- 可直接安装到 `~/.codex/skills/`
+- [为什么做这个 skill](#为什么做这个-skill)
+- [适用场景](#适用场景)
+- [核心 API / 模式](#核心-api--模式)
+- [快速开始](#快速开始)
+- [安装](#安装)
+- [使用](#使用)
+- [仓库结构](#仓库结构)
 
-### 包含内容
+## 快速开始
+
+1. 下载仓库或 release zip
+2. 把目录复制到 `~/.codex/skills/`
+3. 在对话里调用 `$ios26-liquidglass-swiftui`
+4. 提供 SwiftUI 页面或组件上下文
+
+示例：
 
 ```text
-ios26-liquidglass-swiftui/
-├── SKILL.md
-├── README.md
-├── agents/
-│   └── openai.yaml
-└── references/
-    ├── quick-reference.md
-    └── checklist.md
+Use $ios26-liquidglass-swiftui to refactor this SwiftUI screen into an iOS 26 Liquid Glass style.
 ```
 
-### 适用场景
+## 为什么做这个 skill
+
+很多所谓 “Liquid Glass 风格” 最后只是 blur、透明度和渐变的叠加。这个 skill 的目标不是做“像玻璃”的视觉，而是帮助 agent 用更接近 iOS 26 原生设计语言的方式去实现真正可交付的 SwiftUI 界面。
+
+## 适用场景
 
 - 把现有 SwiftUI 页面改成 iOS 26 Liquid Glass 风格
 - 为 tab bar、toolbar、sheet 和高优先级操作加入原生 glass 语义
 - 为相关控件加入 glass morphing transition
 - 检查页面的 Liquid Glass 实现是否符合 iOS 26 语义
 
-### 核心 API / 模式
+## 核心 API / 模式
 
 - `glassEffect()`
 - `GlassEffectContainer`
@@ -45,7 +53,7 @@ ios26-liquidglass-swiftui/
 - `.buttonStyle(.glass)`
 - `.buttonStyle(.glassProminent)`
 
-### 安装
+## 安装
 
 ```bash
 mkdir -p ~/.codex/skills
@@ -59,7 +67,7 @@ unzip ios26-liquidglass-swiftui.zip
 cp -R ios26-liquidglass-swiftui ~/.codex/skills/
 ```
 
-### 使用
+## 使用
 
 ```text
 Use $ios26-liquidglass-swiftui to refactor this SwiftUI screen into an iOS 26 Liquid Glass style.
@@ -71,35 +79,14 @@ Use $ios26-liquidglass-swiftui to refactor this SwiftUI screen into an iOS 26 Li
 把这个 SwiftUI 页面改成 iOS 26 Liquid Glass 风格
 ```
 
-### 为什么做这个 skill
-
-很多所谓 “Liquid Glass 风格” 最后只是 blur、透明度和渐变的叠加。这个 skill 的目标不是做“像玻璃”的视觉，而是帮助 agent 用更接近 iOS 26 原生设计语言的方式去实现真正可交付的 SwiftUI 界面。
-
-### License
-
-MIT
-
----
-
-## English
-
-`ios26-liquidglass-swiftui` is a distributable Codex skill for guiding AI coding agents to refactor SwiftUI screens into the iOS 26 Liquid Glass style.
-
-It focuses on native SwiftUI / iOS 26 APIs rather than custom blur stacks, fake glass effects, or hard-to-maintain visual hacks.
-
-### Features
-
-- Focused on native iOS 26 Liquid Glass APIs
-- Built for SwiftUI refactors and new screen implementation
-- Includes workflow guidance, a quick reference, and a delivery checklist
-- Easy to install into `~/.codex/skills/`
-
-### Package Contents
+## 仓库结构
 
 ```text
 ios26-liquidglass-swiftui/
 ├── SKILL.md
 ├── README.md
+├── README.en.md
+├── LICENSE
 ├── agents/
 │   └── openai.yaml
 └── references/
@@ -107,45 +94,6 @@ ios26-liquidglass-swiftui/
     └── checklist.md
 ```
 
-### Good Fit For
-
-- Refactoring an existing SwiftUI screen into the iOS 26 Liquid Glass style
-- Adding native glass semantics to tab bars, toolbars, sheets, and high-priority actions
-- Introducing glass morphing transitions for related controls
-- Reviewing whether a Liquid Glass implementation matches iOS 26 semantics
-
-### Main APIs / Patterns Covered
-
-- `glassEffect()`
-- `GlassEffectContainer`
-- `glassEffectID(_:in:)`
-- `.buttonStyle(.glass)`
-- `.buttonStyle(.glassProminent)`
-
-### Installation
-
-```bash
-mkdir -p ~/.codex/skills
-cp -R ios26-liquidglass-swiftui ~/.codex/skills/
-```
-
-If you received a zip archive, unzip it first:
-
-```bash
-unzip ios26-liquidglass-swiftui.zip
-cp -R ios26-liquidglass-swiftui ~/.codex/skills/
-```
-
-### Usage
-
-```text
-Use $ios26-liquidglass-swiftui to refactor this SwiftUI screen into an iOS 26 Liquid Glass style.
-```
-
-### Why This Exists
-
-Many so-called “Liquid Glass” implementations end up being stacks of blur, opacity, and gradients. This skill is meant to help agents produce SwiftUI work that feels aligned with the iOS 26 design language and is suitable for real delivery.
-
-### License
+## License
 
 MIT
